@@ -3,5 +3,9 @@
   <button class="stop-btn">멈춤</button>
   <button class="reset-btn">리셋</button>
 </p>
-<p>this is test item : {{ item }}</p>
-<!-- 목표 - 시작 버튼을 눌렀을 때, time-display가 멈춰있다가 숫자 카운팅 시작 구현  -->
+
+<label for="item-input">Add an item :</label>
+<input type="text" id="item-input" #newItem />
+<button type="button" (click)="addNewItem(newItem.value)">
+  Add to Parent's list
+</button>
