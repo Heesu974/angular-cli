@@ -4,3 +4,10 @@
   height: 80vh;
   font-size: 40px;
 }
+.display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
