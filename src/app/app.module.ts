@@ -6,25 +6,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SectionComponent } from './section/section.component';
-import { TimeDisplayComponent } from './section/time-display/time-display.component';
-import { ButtonsComponent } from './section/buttons/buttons.component';
-import { SectionTimeComponent } from './section/section-time/section-time.component';
+import { TimeDisplayComponent } from './section/time-stopper/time-display/time-display.component';
+import { ButtonsComponent } from './section/time-stopper/buttons/buttons.component';
+import { SectionTimeComponent } from './section/time-stopper/section-time/section-time.component';
+import { LayoutModule } from './layout/layout.module';
+import { SectionModule } from './section/section.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    SectionComponent,
-    TimeDisplayComponent,
-    ButtonsComponent,
-    SectionTimeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, LayoutModule, SectionModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+//헤더와 푸터같은 경우, 레이아웃을 담당하고 있습니다.
