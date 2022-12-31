@@ -1,11 +1,12 @@
 <p>
-  <button class="start-btn">시작</button>
+  <button (click)="start()" class="start-btn">시작</button>
   <button class="stop-btn">멈춤</button>
   <button class="reset-btn">리셋</button>
 </p>
 
-<label for="item-input">Add an item :</label>
-<input type="text" id="item-input" #newItem />
-<button type="button" (click)="addNewItem(newItem.value)">
-  Add to Parent's list
-</button>
+<!-- 
+자식 buttons >  부모 section > 자식 time-display -->
+
+<!-- 목표 -시작 버튼을 눌렀을 때,
+time-display가 시간값이 변하기 시작하도록 설정 -->
+<!-- 자식 컴포넌트로부터 부모 컴포넌트로 데이터/ 이벤트 바인딩 - @Output() -->
