@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./section.component.css'],
 })
 export class SectionComponent {
-  present: any;
+  clickedButton: any;
 
-  startTime($event: any) {
+  executeStopper($event: any) {
     console.log('section에서', $event);
-    this.present = $event;
+    this.clickedButton = $event;
   }
 }

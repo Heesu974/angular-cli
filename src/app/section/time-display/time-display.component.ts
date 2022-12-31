@@ -6,7 +6,7 @@ import { Component, Input, SimpleChange } from '@angular/core';
   styleUrls: ['./time-display.component.css'],
 })
 export class TimeDisplayComponent {
-  @Input() countReady: any;
+  @Input() requestFunc: any;
   minute: number = 0;
   second: number = 0;
   mSecond: number = 0;
@@ -19,20 +19,26 @@ export class TimeDisplayComponent {
       this.mSecond = this.mSecond + 1;
     }, 10);
   }
-  clearTimeCount() {
+  timeStop() {
     clearInterval(this.timeInterval);
   }
+  timeReset() {
+    this.timeStop();
+    this.mSecond = 0;
+  }
+
   ngOnChanges(changes: SimpleChange) {
-    console.log(this.countReady);
-    if (this.countReady === 'count start') {
-      this.timeCount();
-    } else if (this.countReady === 'Request for stop counting') {
-      this.clearTimeCount();
-    } else if (this.countReady === 'Request for reset count') {
-      this.clearTimeCount();
-      this.minute = 0;
-      this.second = 0;
-      this.mSecond = 0;
+    console.log(changes);
+    switch (this.requestFunc) {
+      case 'start':
+        this.timeCount();
+        break;
+      case 'stop':
+        this.timeStop();
+        break;
+      case 'reset':
+        this.timeReset();
+        break;
     }
   }
 }

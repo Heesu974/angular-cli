@@ -8,15 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class ButtonsComponent {
   @Output() clickEvent = new EventEmitter<any>();
 
-  start() {
-    this.clickEvent.emit('count start');
-  }
-  stop() {
-    console.log('멈춤 버튼 클릭됨');
-    this.clickEvent.emit('Request for stop counting');
-  }
-  reset() {
-    console.log('리셋 버튼 클릭 됨');
-    this.clickEvent.emit('Request for reset count');
+  executeButton(requestFunc: any) {
+    this.clickEvent.emit(requestFunc);
   }
 }
