@@ -1,7 +1,8 @@
 <div class="title">
   <div class="display">
-    <app-time-display [inputData]="present"></app-time-display>
+    <app-time-display [countReady]="present"></app-time-display>
     <app-buttons (clickEvent)="startTime($event)"></app-buttons>
+    <!-- 여기서 $event에 "start count"가 들어있음 -->
   </div>
 </div>
 

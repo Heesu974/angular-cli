@@ -9,11 +9,14 @@ export class ButtonsComponent {
   @Output() clickEvent = new EventEmitter<any>();
 
   start() {
-    this.clickEvent.emit('change!');
+    this.clickEvent.emit('count start');
+  }
+  stop() {
+    console.log('멈춤 버튼 클릭됨');
+    this.clickEvent.emit('Request for stop counting');
+  }
+  reset() {
+    console.log('리셋 버튼 클릭 됨');
+    this.clickEvent.emit('Request for reset count');
   }
 }
-
-// clickEvent를 통해서 부모한테 데이터를 바인딩하고,
-// section Component가 다시 time-display 자식 컴포넌트에 데이터를 바인딩하는 것이 목표이다.
-
-// 자식 컴포넌트가 부모 데이터로부터 데이터를 받기 위해서는 @Input() 데코레이터를 사용
