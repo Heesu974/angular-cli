@@ -1,9 +1,15 @@
-<h3>{{ minutes }} : {{ second }} : {{ msecond }}</h3>
+<div class="section-container">
+  <h3>{{ minutes }} : {{ second }} : {{ msecond }}</h3>
 
-<div class="button-container">
-  <button (click)="clickBtnHandler('start')" class="start-button">start</button>
-  <button (click)="clickBtnHandler('stop')" class="stop-button">stop</button>
-  <button (click)="clickBtnHandler('reset')" class="reset-button">reset</button>
+  <div class="button-container">
+    <button (click)="clickBtnHandler('start')" class="start-button">
+      start
+    </button>
+    <button (click)="clickBtnHandler('stop')" class="stop-button">stop</button>
+    <button (click)="clickBtnHandler('reset')" class="reset-button">
+      reset
+    </button>
+  </div>
 </div>
 
 <!-- @Output() 부모에서 자식으로,

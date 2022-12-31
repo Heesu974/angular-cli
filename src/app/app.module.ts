@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithComponentFactories, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,3 +21,7 @@ import { SectionModule } from './section/section.module';
 export class AppModule {}
 
 //헤더와 푸터같은 경우, 레이아웃을 담당하고 있습니다.
+
+// layout module과 layout을 담당하는 component를 모아둔 모듈
+
+// routing을 담당하는 애들을 모아둔 모듈
